@@ -40,3 +40,11 @@
 .read-the-docs {
   color: #888;
 }
+
+.new-button {
+  color: red;
+}
+
+.avatar {
+    border-radius: 50%;
+}

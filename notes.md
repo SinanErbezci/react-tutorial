@@ -23,3 +23,15 @@ export default function MyApp(){
 <MyButton /> starts with a capital letter that's how you know it's React component.
 
 export default specify the main component in the file.
+
+JSX is stricter than HTML. You have to close tags like <br />. Your component also can’t return multiple JSX tags. You have to wrap them into a shared parent, like a <div>..x.</div> or an empty <>...</> wrapper:
+
+# Adding Styles
+you specify CSS class with className.
+```
+<img className="avatar" />
+```
+
+# Displaying Data
+Curly braces let you “escape back” into JavaScript so that you can embed some variable from your code and display it to the user. 
+

@@ -3,6 +3,19 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+const user = {
+  name: "Sinan",
+  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+  imageSize: 90,
+};
+
+function MyButton() {
+  return(
+    <button className='new-button'>I'm a button</button>
+  );
+}
+
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -28,6 +41,19 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <div>
+        <h1>{user.name}</h1>
+        <img
+          className='avatar'
+          src={user.imageUrl}
+          alt={'photo of' + user.name} 
+          style={{
+            width: user.imageSize,
+            height: user.imageSize
+          }}
+        />
+      </div>
+      <MyButton />
     </>
   )
 }
