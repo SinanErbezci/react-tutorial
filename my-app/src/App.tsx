@@ -9,15 +9,31 @@ const user = {
   imageSize: 90,
 };
 
+const products = [
+  { title: "apple", id:1},
+  { title: "bread", id:2},
+];
+
+const listItems = products.map(product => 
+  <li key={product.id}>
+    {product.title}
+  </li>
+);
+
 function MyButton() {
+  // count => current state, setCount => func that updates it
+  const [count, setCount] = useState(0);
+  function handleClick() {
+    setCount(count + 1);
+    alert("You clicked me!");
+  }
   return(
-    <button className='new-button'>I'm a button</button>
+    <button onClick={handleClick} className='new-button'>Count is {count}</button>
   );
 }
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -31,9 +47,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <MyButton/>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
@@ -52,10 +66,31 @@ function App() {
             height: user.imageSize
           }}
         />
+        <ul>{listItems}</ul>
       </div>
-      <MyButton />
     </>
   )
 }
 
+// Conditional Rendering
+// let content;
+// if (isLoggedIn) {
+//   content = <AdminPanel />
+// } else {
+//   content = <LoginForm />
+// }
+// return (
+//   <div>
+//   {content}
+//   </div>
+// )
+
+{/* <div>
+  {isLoggendIn ? (
+    <AdminPanel />
+  ) : (
+    <LoginForm />
+  )}
+</div>
+   */}
 export default App
